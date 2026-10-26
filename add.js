@@ -113,9 +113,9 @@ if (a <= 0 || b <= 0 || c <= 0) {
 
 // 5-masala. Yetkazib berish narxi
 // Buyurtma summasi va yetkazib berish hududi berilgan:
-// let orderPrice = 180000;
-// let region = "tashkent";
-// let isExpress = true;
+ let orderPrice = 180000;
+ let region = "tashkent";
+let isExpress = true;
 // • Toshkentda buyurtma 200 000 so‘m yoki undan ko‘p bo‘lsa, oddiy yetkazib berish bepul.
 // • Toshkentda 200 000 so‘mdan kam bo‘lsa, oddiy yetkazib berish 15 000 so‘m.
 // • Boshqa hududlarda oddiy yetkazib berish 25 000 so‘m.
@@ -123,6 +123,20 @@ if (a <= 0 || b <= 0 || c <= 0) {
 // 20 000 so‘m qo‘shiladi.
 // Buyurtma va yetkazib berishning umumiy narxini chiqaring. Hudud, summa va yetkazib berish
 // turini birgalikda tekshiring.
+if (orderPrice >= 200000) {
+    console.log("Yetkazib berish bepul");
+} else if(orderPrice < 200000) {
+    buyurtma = 15000
+    console.log(`Buyurtma narxi: ${orderPrice+buyurtma}`);
+}else if(region !== "tashkent"){
+    buyurtma=25000;
+    console.log(`buyurtma narxi: ${orderPrice+buyurtma}`);
+}else if(isExpress==true){
+    buyurtma = 15000;
+    yetkazish = buyurtma +20000;
+    console.log(`Yetkazib berish : ${yetkazish}`);
+    console.log(`Buyurtma narxi ${orderPrice}`); 
+}
 
 
 
